@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 export default function CreatePage() {
   const history = useHistory();
 
-  // here's the state you'll need:
   const [catInForm, setCatInForm] = useState({
     name: '',
     age: 0,
