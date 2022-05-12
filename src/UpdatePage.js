@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { getCatById, updateCat } from './services/fetch-utils';
 import { useHistory, useParams } from 'react-router-dom';
-import { useEffect } from 'react/cjs/react.production.min';
+import { useEffect } from 'react';
 
-export default function CreatePage() {
+export default function UpdatePage() {
   const history = useHistory();
   const { id } = useParams();
 

@@ -9,8 +9,8 @@ import UpdatePage from './UpdatePage';
 import { getUser, logout } from './services/fetch-utils';
 
 export default function App() {
-  const [email, setEmail] = useState();
-  const [token, setToken] = useState();
+  const [email, setEmail] = useState('');
+  const [token, setToken] = useState('');
 
   useEffect(() => {
     const user = getUser();
@@ -30,17 +30,19 @@ export default function App() {
     <Router>
       <div className="App">
         <header>
-          {token && (
-            <>
-              <NavLink exact className="active-link" to="/cats">
-                Board Game List
-              </NavLink>
-              <NavLink exact className="active-link" to="/create">
-                Create A Game
-              </NavLink>
-              <button onClick={handleLogout}>Logout</button>
-            </>
-          )}
+          <div className="buttons">
+            {token && (
+              <>
+                <NavLink exact className="active-link" to="/cats">
+                  Kitty List
+                </NavLink>
+                <NavLink exact className="active-link" to="/create">
+                  Create A Cat
+                </NavLink>
+                <button onClick={handleLogout}>Logout</button>
+              </>
+            )}
+          </div>
           <p>{email}</p>
         </header>
         <main>
